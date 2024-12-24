@@ -1,5 +1,6 @@
 .header {
-  padding: 20px 0;
+  padding: 50px 0;
+ 
 }
 .nav {
   display: flex;
@@ -19,13 +20,24 @@
 .nav-link {
   position: relative;
   display: block;
-  font-weight: 500;
+  width: 100px;
+  text-align: center;
+  font-weight: 800;
   letter-spacing: 0.02em;
   transition: 200ms ease-in;
+  background-color: rgb(180, 204, 189);
+  border-radius: 5px;
+  padding: 10px;
+  -webkit-box-shadow: 3px 3px 5px 6px rgb(125, 184, 162);
+  -moz-box-shadow:    3px 3px 5px 6px rgb(125, 184, 162);
+  box-shadow:         3px 3px 5px 6px rgb(125, 184, 162);
+ 
 }
 .nav-link:hover,
 .nav-link:focus {
   color: #747bff;
+  
+  
 }
 .nav-link::after {
   content: '';
