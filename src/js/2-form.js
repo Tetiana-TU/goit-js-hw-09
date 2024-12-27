@@ -13,9 +13,10 @@ let formData = {
 };
 const funformData = () => {
     try {
-    if (localStorage.length===0){return;}
-const formDataLS = JSON.parse(localStorage.getItem('feedback-form-state'));
-
+   const formDataLS = JSON.parse(localStorage.getItem('feedback-form-state'));
+if (formDataLS===null){
+  return;
+}
 formData = formDataLS;
 for (const key in formDataLS) {
   feedbackFormEl.elements[key].value = formDataLS[key];
@@ -29,6 +30,7 @@ const funformInput = event => {
   const formel = event.target;
   const inputValue = formel.value;
   const inputName = formel.name;
+
   formData[inputName]=inputValue;
   
   localStorage.setItem('feedback-form-state', JSON.stringify(formData));
