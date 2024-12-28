@@ -40,16 +40,17 @@ const btnFormSubmit = event => {
   
   if (formData.email === '' || formData.message === '') {
     return alert('Fill please all fields');
-  } 
+  } else {
   console.log(formData);
  
    const { currentTarget: formEl } = event;
-  formEl.reset();
+  
   localStorage.removeItem('feedback-form-state');
    formData.email = '';
   formData.message = '';
+  formEl.reset();
+}
 };
-
   
 feedbackFormEl.addEventListener('input', funformInput);
 feedbackFormEl.addEventListener('submit', btnFormSubmit);
