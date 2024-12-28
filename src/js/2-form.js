@@ -42,12 +42,14 @@ const btnFormSubmit = event => {
     return alert('Fill please all fields');
   } 
   console.log(formData);
-  }
  
-      const { currentTarget: formEl } = event;
    
   formEl.reset();
   localStorage.removeItem('feedback-form-state');
+   formData.email = '';
+  formData.message = '';
+};
+
   
 feedbackFormEl.addEventListener('input', funformInput);
 feedbackFormEl.addEventListener('submit', btnFormSubmit);
