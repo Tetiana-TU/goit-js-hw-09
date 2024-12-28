@@ -36,16 +36,20 @@ const funformInput = event => {
   localStorage.setItem('feedback-form-state', JSON.stringify(formData));
 };
 const btnFormSubmit = event => {
+   event.preventDefault();
+  
   if (formData.email === '' || formData.message === '') {
-    alert('Fill please all fields');
-  } else {
-    console.log(formData);
+    return alert('Fill please all fields');
+  } 
+  console.log(formData);
   }
-  event.preventDefault();
+ 
       const { currentTarget: formEl } = event;
    
   formEl.reset();
   localStorage.removeItem('feedback-form-state');
+formData.email = '';
+  formData.message = '';
 };
 feedbackFormEl.addEventListener('input', funformInput);
 feedbackFormEl.addEventListener('submit', btnFormSubmit);
