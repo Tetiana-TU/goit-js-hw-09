@@ -43,7 +43,7 @@ const btnFormSubmit = event => {
   } 
   console.log(formData);
  
-   
+   const { currentTarget: formEl } = event;
   formEl.reset();
   localStorage.removeItem('feedback-form-state');
    formData.email = '';
